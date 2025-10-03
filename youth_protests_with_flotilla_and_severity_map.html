@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_64313cbbe9a2a50dcb12282f15820bd6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 20px; left: 20px; width: 230px; z-index:9999; 
+     background-color: white; border:2px solid #444; padding:10px; font-size:14px;">
+<b>مستوى الحدة</b><br>
+<span style="color:green;">●</span> تجمع<br>
+<span style="color:orange;">●</span> مسيرة<br>
+<span style="color:purple;">●</span> إضراب<br>
+<span style="color:darkred;">●</span> اشتباكات<br>
+<hr style="margin:6px 0;">
+<small>العلامات الحمراء: احتجاجات شبابية<br>
+العلامات الزرقاء: احتجاجات أسطول الصمود</small>
+</div>
+    
+            <div class="folium-map" id="map_64313cbbe9a2a50dcb12282f15820bd6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_64313cbbe9a2a50dcb12282f15820bd6 = L.map(
+                "map_64313cbbe9a2a50dcb12282f15820bd6",
+                {
+                    center: [25.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_24fa50068f8315c390eec825a6e23faf = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_64313cbbe9a2a50dcb12282f15820bd6);
+        
+    
+            var feature_group_52f82b6395c12ac8377f1a03d677ee01 = L.featureGroup(
+                {}
+            ).addTo(map_64313cbbe9a2a50dcb12282f15820bd6);
+        
+    
+            var marker_cd27e3f396063c8d452e1e6f8a37c5e2 = L.marker(
+                [33.5, -7.6],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_e230b365e19096623c6dd663518f6d7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cd27e3f396063c8d452e1e6f8a37c5e2.setIcon(icon_e230b365e19096623c6dd663518f6d7e);
+        
+    
+        var popup_280615695b3a7bcec6210c434c7fd984 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e995aac2e7c51e2f688c198d829aa4b4 = $(`<div id="html_e995aac2e7c51e2f688c198d829aa4b4" style="width: 100.0%; height: 100.0%;">المغرب: GenZ 212: مطالب التعليم والصحة والوظائف.</div>`)[0];
+            popup_280615695b3a7bcec6210c434c7fd984.setContent(html_e995aac2e7c51e2f688c198d829aa4b4);
+        
+
+        marker_cd27e3f396063c8d452e1e6f8a37c5e2.bindPopup(popup_280615695b3a7bcec6210c434c7fd984)
+        ;
+
+        
+    
+    
+            marker_cd27e3f396063c8d452e1e6f8a37c5e2.bindTooltip(
+                `<div>
+                     المغرب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9ad8e73f273775078c3bad40800ace75 = L.marker(
+                [-18.9, 47.5],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_d0b160a36ff95e515ee28d0727d5aa3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9ad8e73f273775078c3bad40800ace75.setIcon(icon_d0b160a36ff95e515ee28d0727d5aa3d);
+        
+    
+        var popup_d293d80a315facfcef44256bf2dfbe53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_85c446cf0ae1c9b426d8d79dba900ccb = $(`<div id="html_85c446cf0ae1c9b426d8d79dba900ccb" style="width: 100.0%; height: 100.0%;">مدغشقر: شباب ضد تردّي الخدمات (ماء وكهرباء).</div>`)[0];
+            popup_d293d80a315facfcef44256bf2dfbe53.setContent(html_85c446cf0ae1c9b426d8d79dba900ccb);
+        
+
+        marker_9ad8e73f273775078c3bad40800ace75.bindPopup(popup_d293d80a315facfcef44256bf2dfbe53)
+        ;
+
+        
+    
+    
+            marker_9ad8e73f273775078c3bad40800ace75.bindTooltip(
+                `<div>
+                     مدغشقر
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_819f2c097404515cbe53508ccfcbd8ce = L.marker(
+                [-12.0, -77.0],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_615c656228859de1b5ca0c2f100d2b2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_819f2c097404515cbe53508ccfcbd8ce.setIcon(icon_615c656228859de1b5ca0c2f100d2b2f);
+        
+    
+        var popup_b2ef49480e80bfae4e892cb8480844ab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ff80db3a28d1d9c49cc086e0d2de21a = $(`<div id="html_9ff80db3a28d1d9c49cc086e0d2de21a" style="width: 100.0%; height: 100.0%;">بيرو: شباب حول المعاشات والعدالة الاجتماعية.</div>`)[0];
+            popup_b2ef49480e80bfae4e892cb8480844ab.setContent(html_9ff80db3a28d1d9c49cc086e0d2de21a);
+        
+
+        marker_819f2c097404515cbe53508ccfcbd8ce.bindPopup(popup_b2ef49480e80bfae4e892cb8480844ab)
+        ;
+
+        
+    
+    
+            marker_819f2c097404515cbe53508ccfcbd8ce.bindTooltip(
+                `<div>
+                     بيرو
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_847108ddfb47524368d7b0f3cd47dd7a = L.marker(
+                [-8.6, 125.6],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_883ebedf58b54a5fe7630891802e137f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_847108ddfb47524368d7b0f3cd47dd7a.setIcon(icon_883ebedf58b54a5fe7630891802e137f);
+        
+    
+        var popup_cfdcd813e11fb4239a7b627873e443f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_da85b5cfdf5e3f6831529f0645065108 = $(`<div id="html_da85b5cfdf5e3f6831529f0645065108" style="width: 100.0%; height: 100.0%;">تيمور-لشتي: طلاب ضد شراء سيارات برلمانية.</div>`)[0];
+            popup_cfdcd813e11fb4239a7b627873e443f8.setContent(html_da85b5cfdf5e3f6831529f0645065108);
+        
+
+        marker_847108ddfb47524368d7b0f3cd47dd7a.bindPopup(popup_cfdcd813e11fb4239a7b627873e443f8)
+        ;
+
+        
+    
+    
+            marker_847108ddfb47524368d7b0f3cd47dd7a.bindTooltip(
+                `<div>
+                     تيمور-لشتي
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca85e1a9a48e591f53d44f58daed70e5 = L.marker(
+                [-6.2, 106.8],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_6cef388af036ef0bbec4ee901f513751 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ca85e1a9a48e591f53d44f58daed70e5.setIcon(icon_6cef388af036ef0bbec4ee901f513751);
+        
+    
+        var popup_44e76625f239136944bb9a7cafed31f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a2512b721cbcd3c5d55e8319ba2c93bc = $(`<div id="html_a2512b721cbcd3c5d55e8319ba2c93bc" style="width: 100.0%; height: 100.0%;">إندونيسيا (جاكرتا): طلاب ضد الفساد والسياسات الحكومية.</div>`)[0];
+            popup_44e76625f239136944bb9a7cafed31f1.setContent(html_a2512b721cbcd3c5d55e8319ba2c93bc);
+        
+
+        marker_ca85e1a9a48e591f53d44f58daed70e5.bindPopup(popup_44e76625f239136944bb9a7cafed31f1)
+        ;
+
+        
+    
+    
+            marker_ca85e1a9a48e591f53d44f58daed70e5.bindTooltip(
+                `<div>
+                     إندونيسيا (جاكرتا)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5859e30edc8cc86550408b37500b0965 = L.marker(
+                [48.8566, 2.3522],
+                {}
+            ).addTo(feature_group_52f82b6395c12ac8377f1a03d677ee01);
+        
+    
+            var icon_63cfa5213f4ea28a7018a1c54c64bab8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5859e30edc8cc86550408b37500b0965.setIcon(icon_63cfa5213f4ea28a7018a1c54c64bab8);
+        
+    
+        var popup_cd0d28a97e724d6588991279c84baf7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_25936cb446c3bb790355beb49f727ac2 = $(`<div id="html_25936cb446c3bb790355beb49f727ac2" style="width: 100.0%; height: 100.0%;">فرنسا (باريس): تحركات طلابية ضد إجراءات تقشف.</div>`)[0];
+            popup_cd0d28a97e724d6588991279c84baf7d.setContent(html_25936cb446c3bb790355beb49f727ac2);
+        
+
+        marker_5859e30edc8cc86550408b37500b0965.bindPopup(popup_cd0d28a97e724d6588991279c84baf7d)
+        ;
+
+        
+    
+    
+            marker_5859e30edc8cc86550408b37500b0965.bindTooltip(
+                `<div>
+                     فرنسا (باريس)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_89ccb3c15e3413bd5302c815314ff3d2 = L.featureGroup(
+                {}
+            ).addTo(map_64313cbbe9a2a50dcb12282f15820bd6);
+        
+    
+            var marker_26ab9305c5bd8c7d64318eaa1d8225a7 = L.marker(
+                [41.9028, 12.4964],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_230264b6650d5ced4a4fb2e235a01d73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_26ab9305c5bd8c7d64318eaa1d8225a7.setIcon(icon_230264b6650d5ced4a4fb2e235a01d73);
+        
+    
+        var popup_d44141378eaa253d4ab66ded791a8933 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3ca25e51e76e55795bab5291386e5b5 = $(`<div id="html_f3ca25e51e76e55795bab5291386e5b5" style="width: 100.0%; height: 100.0%;">روما, إيطاليا: تجمّعات ضخمة وإضراب عام.</div>`)[0];
+            popup_d44141378eaa253d4ab66ded791a8933.setContent(html_f3ca25e51e76e55795bab5291386e5b5);
+        
+
+        marker_26ab9305c5bd8c7d64318eaa1d8225a7.bindPopup(popup_d44141378eaa253d4ab66ded791a8933)
+        ;
+
+        
+    
+    
+            marker_26ab9305c5bd8c7d64318eaa1d8225a7.bindTooltip(
+                `<div>
+                     روما – إيطاليا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bb49ad8d41ca23edae00fe44743da1f6 = L.marker(
+                [45.4642, 9.19],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_5b15f4664da2432bf60f0d9443be230f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bb49ad8d41ca23edae00fe44743da1f6.setIcon(icon_5b15f4664da2432bf60f0d9443be230f);
+        
+    
+        var popup_afe38eac44abff00673e654311374299 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6a43a532ec5cedb3550fb3a4dcfae315 = $(`<div id="html_6a43a532ec5cedb3550fb3a4dcfae315" style="width: 100.0%; height: 100.0%;">ميلانو, إيطاليا: وقفات واحتجاجات قرب المترو.</div>`)[0];
+            popup_afe38eac44abff00673e654311374299.setContent(html_6a43a532ec5cedb3550fb3a4dcfae315);
+        
+
+        marker_bb49ad8d41ca23edae00fe44743da1f6.bindPopup(popup_afe38eac44abff00673e654311374299)
+        ;
+
+        
+    
+    
+            marker_bb49ad8d41ca23edae00fe44743da1f6.bindTooltip(
+                `<div>
+                     ميلانو – إيطاليا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3a0c95010d5f86340e40eed6a6f79e09 = L.marker(
+                [52.52, 13.405],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_40f1c2c6f176f3ace2e4599715709b9e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3a0c95010d5f86340e40eed6a6f79e09.setIcon(icon_40f1c2c6f176f3ace2e4599715709b9e);
+        
+    
+        var popup_ee38d4cf59ec5bcf1a6afa6b2c5d6f91 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a7af54fe5174f7f0554813c40c2ed080 = $(`<div id="html_a7af54fe5174f7f0554813c40c2ed080" style="width: 100.0%; height: 100.0%;">برلين, ألمانيا: تظاهرات تضامن واسعة.</div>`)[0];
+            popup_ee38d4cf59ec5bcf1a6afa6b2c5d6f91.setContent(html_a7af54fe5174f7f0554813c40c2ed080);
+        
+
+        marker_3a0c95010d5f86340e40eed6a6f79e09.bindPopup(popup_ee38d4cf59ec5bcf1a6afa6b2c5d6f91)
+        ;
+
+        
+    
+    
+            marker_3a0c95010d5f86340e40eed6a6f79e09.bindTooltip(
+                `<div>
+                     برلين – ألمانيا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3ae894f582fce7d88cf0e7fed7ee1aa = L.marker(
+                [50.8503, 4.3517],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_585aa605bcaac70623607f86b63b3098 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e3ae894f582fce7d88cf0e7fed7ee1aa.setIcon(icon_585aa605bcaac70623607f86b63b3098);
+        
+    
+        var popup_e85e0cb67b81b9d7adf1a40f25b821da = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9aa40f89e81783add391ef41749be6a3 = $(`<div id="html_9aa40f89e81783add391ef41749be6a3" style="width: 100.0%; height: 100.0%;">بروكسل, بلجيكا: تظاهرات قرب مؤسسات الاتحاد الأوروبي.</div>`)[0];
+            popup_e85e0cb67b81b9d7adf1a40f25b821da.setContent(html_9aa40f89e81783add391ef41749be6a3);
+        
+
+        marker_e3ae894f582fce7d88cf0e7fed7ee1aa.bindPopup(popup_e85e0cb67b81b9d7adf1a40f25b821da)
+        ;
+
+        
+    
+    
+            marker_e3ae894f582fce7d88cf0e7fed7ee1aa.bindTooltip(
+                `<div>
+                     بروكسل – بلجيكا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c52bb7e63767d1ce7b92b975fb93b997 = L.marker(
+                [37.9838, 23.7275],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_22f4e6ed14c2e01204a8d8ef1b7d5ae4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c52bb7e63767d1ce7b92b975fb93b997.setIcon(icon_22f4e6ed14c2e01204a8d8ef1b7d5ae4);
+        
+    
+        var popup_f26d952c2a1b68cc3defb2db4f317810 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_739961b8f7f56eb269b8c42f45b52280 = $(`<div id="html_739961b8f7f56eb269b8c42f45b52280" style="width: 100.0%; height: 100.0%;">أثينا, اليونان: مسيرات مركزية.</div>`)[0];
+            popup_f26d952c2a1b68cc3defb2db4f317810.setContent(html_739961b8f7f56eb269b8c42f45b52280);
+        
+
+        marker_c52bb7e63767d1ce7b92b975fb93b997.bindPopup(popup_f26d952c2a1b68cc3defb2db4f317810)
+        ;
+
+        
+    
+    
+            marker_c52bb7e63767d1ce7b92b975fb93b997.bindTooltip(
+                `<div>
+                     أثينا – اليونان
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e56c9d025b6273bc6dab2a00d66e367c = L.marker(
+                [41.3874, 2.1686],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_36cd7e0c85c16d7c2a5c5a91135fb83f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e56c9d025b6273bc6dab2a00d66e367c.setIcon(icon_36cd7e0c85c16d7c2a5c5a91135fb83f);
+        
+    
+        var popup_17f375fa406f05f1f215c9938d3e5b8f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_227afcbc95da5b2b9b34105bb67b6c4a = $(`<div id="html_227afcbc95da5b2b9b34105bb67b6c4a" style="width: 100.0%; height: 100.0%;">برشلونة, إسبانيا: مسيرة ضخمة.</div>`)[0];
+            popup_17f375fa406f05f1f215c9938d3e5b8f.setContent(html_227afcbc95da5b2b9b34105bb67b6c4a);
+        
+
+        marker_e56c9d025b6273bc6dab2a00d66e367c.bindPopup(popup_17f375fa406f05f1f215c9938d3e5b8f)
+        ;
+
+        
+    
+    
+            marker_e56c9d025b6273bc6dab2a00d66e367c.bindTooltip(
+                `<div>
+                     برشلونة – إسبانيا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4cb8c9cec54214af2e23888e4a38e096 = L.marker(
+                [40.4168, -3.7038],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_ec8dcd4134bd39c80b9150a198a532e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4cb8c9cec54214af2e23888e4a38e096.setIcon(icon_ec8dcd4134bd39c80b9150a198a532e5);
+        
+    
+        var popup_276e81ab5a552c07179ada6723c6a16e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1a914f391f7fee12e012d78b76e4deb5 = $(`<div id="html_1a914f391f7fee12e012d78b76e4deb5" style="width: 100.0%; height: 100.0%;">مدريد, إسبانيا: تجمعات تضامنية.</div>`)[0];
+            popup_276e81ab5a552c07179ada6723c6a16e.setContent(html_1a914f391f7fee12e012d78b76e4deb5);
+        
+
+        marker_4cb8c9cec54214af2e23888e4a38e096.bindPopup(popup_276e81ab5a552c07179ada6723c6a16e)
+        ;
+
+        
+    
+    
+            marker_4cb8c9cec54214af2e23888e4a38e096.bindTooltip(
+                `<div>
+                     مدريد – إسبانيا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe40a0ef78be484c3960a877888e4a2c = L.marker(
+                [46.2044, 6.1432],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_7a8fe4a163b183471506a48cd63508d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fe40a0ef78be484c3960a877888e4a2c.setIcon(icon_7a8fe4a163b183471506a48cd63508d9);
+        
+    
+        var popup_3559f2fb70e9873cea6690bdd13ccf30 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8d1a3c68f5f98013ba0a029433f0ab33 = $(`<div id="html_8d1a3c68f5f98013ba0a029433f0ab33" style="width: 100.0%; height: 100.0%;">جنيف, سويسرا: احتجاجات شهدت مناوشات.</div>`)[0];
+            popup_3559f2fb70e9873cea6690bdd13ccf30.setContent(html_8d1a3c68f5f98013ba0a029433f0ab33);
+        
+
+        marker_fe40a0ef78be484c3960a877888e4a2c.bindPopup(popup_3559f2fb70e9873cea6690bdd13ccf30)
+        ;
+
+        
+    
+    
+            marker_fe40a0ef78be484c3960a877888e4a2c.bindTooltip(
+                `<div>
+                     جنيف – سويسرا
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02e642771e56d670941108f70545122d = L.marker(
+                [-34.6037, -58.3816],
+                {}
+            ).addTo(feature_group_89ccb3c15e3413bd5302c815314ff3d2);
+        
+    
+            var icon_5cde08d7e03fb414aec08f4df522bd0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_02e642771e56d670941108f70545122d.setIcon(icon_5cde08d7e03fb414aec08f4df522bd0a);
+        
+    
+        var popup_dc3b2077358b4dd6dc95412fe4ee5c8b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4b01a197c2316a8f7a67a4b6cfa977b3 = $(`<div id="html_4b01a197c2316a8f7a67a4b6cfa977b3" style="width: 100.0%; height: 100.0%;">بوينس آيرس, الأرجنتين: وقفات ومسيرات.</div>`)[0];
+            popup_dc3b2077358b4dd6dc95412fe4ee5c8b.setContent(html_4b01a197c2316a8f7a67a4b6cfa977b3);
+        
+
+        marker_02e642771e56d670941108f70545122d.bindPopup(popup_dc3b2077358b4dd6dc95412fe4ee5c8b)
+        ;
+
+        
+    
+    
+            marker_02e642771e56d670941108f70545122d.bindTooltip(
+                `<div>
+                     بوينس آيرس – الأرجنتين
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b = L.featureGroup(
+                {}
+            ).addTo(map_64313cbbe9a2a50dcb12282f15820bd6);
+        
+    
+            var circle_marker_b180f5aee153b1082c53120d1e6736a8 = L.circleMarker(
+                [33.5, -7.6],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_2145964ba4a8ca4175a1ef4e64efe66b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bc5965a1099e49fae4c62dc0964bac42 = $(`<div id="html_bc5965a1099e49fae4c62dc0964bac42" style="width: 100.0%; height: 100.0%;">المغرب — اشتباكات (صدامات متقطعة وإصابات)</div>`)[0];
+            popup_2145964ba4a8ca4175a1ef4e64efe66b.setContent(html_bc5965a1099e49fae4c62dc0964bac42);
+        
+
+        circle_marker_b180f5aee153b1082c53120d1e6736a8.bindPopup(popup_2145964ba4a8ca4175a1ef4e64efe66b)
+        ;
+
+        
+    
+    
+            circle_marker_b180f5aee153b1082c53120d1e6736a8.bindTooltip(
+                `<div>
+                     المغرب — اشتباكات
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b5b8083fe83675c0a965dab9d77d04fc = L.circleMarker(
+                [-18.9, 47.5],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_ac489ef3769bccee5c9bb46dfd99700b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_67ada1b0c4742339dfd5da7770fa7ee3 = $(`<div id="html_67ada1b0c4742339dfd5da7770fa7ee3" style="width: 100.0%; height: 100.0%;">مدغشقر — مسيرة (مسيرات وتجمّعات متكررة)</div>`)[0];
+            popup_ac489ef3769bccee5c9bb46dfd99700b.setContent(html_67ada1b0c4742339dfd5da7770fa7ee3);
+        
+
+        circle_marker_b5b8083fe83675c0a965dab9d77d04fc.bindPopup(popup_ac489ef3769bccee5c9bb46dfd99700b)
+        ;
+
+        
+    
+    
+            circle_marker_b5b8083fe83675c0a965dab9d77d04fc.bindTooltip(
+                `<div>
+                     مدغشقر — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_791a0a2812fae117bd30e6d25b6f594d = L.circleMarker(
+                [-12.0, -77.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_73745a4b52338e43a3bd2734a0e133db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_43f87b49d47fe28508012f566d8d3136 = $(`<div id="html_43f87b49d47fe28508012f566d8d3136" style="width: 100.0%; height: 100.0%;">بيرو — مسيرة (مسيرات شبابية)</div>`)[0];
+            popup_73745a4b52338e43a3bd2734a0e133db.setContent(html_43f87b49d47fe28508012f566d8d3136);
+        
+
+        circle_marker_791a0a2812fae117bd30e6d25b6f594d.bindPopup(popup_73745a4b52338e43a3bd2734a0e133db)
+        ;
+
+        
+    
+    
+            circle_marker_791a0a2812fae117bd30e6d25b6f594d.bindTooltip(
+                `<div>
+                     بيرو — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e02e68be09c9d56ef0103e1c3d9d0ca8 = L.circleMarker(
+                [-8.6, 125.6],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_38585fc326f910b4220ba0682029bae8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fb7ffa0145221f6b13956377aed09b06 = $(`<div id="html_fb7ffa0145221f6b13956377aed09b06" style="width: 100.0%; height: 100.0%;">تيمور-لشتي — تجمّع (تجمّعات طلابية سلمية)</div>`)[0];
+            popup_38585fc326f910b4220ba0682029bae8.setContent(html_fb7ffa0145221f6b13956377aed09b06);
+        
+
+        circle_marker_e02e68be09c9d56ef0103e1c3d9d0ca8.bindPopup(popup_38585fc326f910b4220ba0682029bae8)
+        ;
+
+        
+    
+    
+            circle_marker_e02e68be09c9d56ef0103e1c3d9d0ca8.bindTooltip(
+                `<div>
+                     تيمور-لشتي — تجمّع
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d1c0faa81cf06cd55ee03513408c18d2 = L.circleMarker(
+                [-6.2, 106.8],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_cef3b3e6b77004a35a0b0a670fa1792e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_add2980aacf98814ca6d79a56f511090 = $(`<div id="html_add2980aacf98814ca6d79a56f511090" style="width: 100.0%; height: 100.0%;">جاكرتا — مسيرة (مسيرات طلابية)</div>`)[0];
+            popup_cef3b3e6b77004a35a0b0a670fa1792e.setContent(html_add2980aacf98814ca6d79a56f511090);
+        
+
+        circle_marker_d1c0faa81cf06cd55ee03513408c18d2.bindPopup(popup_cef3b3e6b77004a35a0b0a670fa1792e)
+        ;
+
+        
+    
+    
+            circle_marker_d1c0faa81cf06cd55ee03513408c18d2.bindTooltip(
+                `<div>
+                     جاكرتا — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8057651c203d322567951536f98ae742 = L.circleMarker(
+                [48.8566, 2.3522],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_03ddff776e69973fee4dfe91069aae76 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dbb4ef39e635b91fe01ed0e0f232ce62 = $(`<div id="html_dbb4ef39e635b91fe01ed0e0f232ce62" style="width: 100.0%; height: 100.0%;">باريس — تجمّع (تحركات طلابية/تجمّعات)</div>`)[0];
+            popup_03ddff776e69973fee4dfe91069aae76.setContent(html_dbb4ef39e635b91fe01ed0e0f232ce62);
+        
+
+        circle_marker_8057651c203d322567951536f98ae742.bindPopup(popup_03ddff776e69973fee4dfe91069aae76)
+        ;
+
+        
+    
+    
+            circle_marker_8057651c203d322567951536f98ae742.bindTooltip(
+                `<div>
+                     باريس — تجمّع
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5b805b09edacae642a1d8e864d362b72 = L.circleMarker(
+                [41.9028, 12.4964],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_44e50cdc07d930c014eb7d220f58cb0d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_914543f79cd66df02a8fe56aff38865a = $(`<div id="html_914543f79cd66df02a8fe56aff38865a" style="width: 100.0%; height: 100.0%;">روما — إضراب (إضراب عام + مسيرات)</div>`)[0];
+            popup_44e50cdc07d930c014eb7d220f58cb0d.setContent(html_914543f79cd66df02a8fe56aff38865a);
+        
+
+        circle_marker_5b805b09edacae642a1d8e864d362b72.bindPopup(popup_44e50cdc07d930c014eb7d220f58cb0d)
+        ;
+
+        
+    
+    
+            circle_marker_5b805b09edacae642a1d8e864d362b72.bindTooltip(
+                `<div>
+                     روما — إضراب
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_70e1e9b71bacbd9d5631f0554db9c0d0 = L.circleMarker(
+                [45.4642, 9.19],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_e596daee793c2c994e4a4e8e31e55801 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_57de50e81620f2616cfe3ef10394b6a8 = $(`<div id="html_57de50e81620f2616cfe3ef10394b6a8" style="width: 100.0%; height: 100.0%;">ميلانو — تجمّع (تجمّعات قرب المترو)</div>`)[0];
+            popup_e596daee793c2c994e4a4e8e31e55801.setContent(html_57de50e81620f2616cfe3ef10394b6a8);
+        
+
+        circle_marker_70e1e9b71bacbd9d5631f0554db9c0d0.bindPopup(popup_e596daee793c2c994e4a4e8e31e55801)
+        ;
+
+        
+    
+    
+            circle_marker_70e1e9b71bacbd9d5631f0554db9c0d0.bindTooltip(
+                `<div>
+                     ميلانو — تجمّع
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4acb2741e141aa95b53e9fecd4285ccf = L.circleMarker(
+                [52.52, 13.405],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_0292301722d2882ea1060dd0328e055e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f30829c215f2d514586f1bf52eeff937 = $(`<div id="html_f30829c215f2d514586f1bf52eeff937" style="width: 100.0%; height: 100.0%;">برلين — مسيرة (مسيرات)</div>`)[0];
+            popup_0292301722d2882ea1060dd0328e055e.setContent(html_f30829c215f2d514586f1bf52eeff937);
+        
+
+        circle_marker_4acb2741e141aa95b53e9fecd4285ccf.bindPopup(popup_0292301722d2882ea1060dd0328e055e)
+        ;
+
+        
+    
+    
+            circle_marker_4acb2741e141aa95b53e9fecd4285ccf.bindTooltip(
+                `<div>
+                     برلين — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_db38c679d9edc58a5267ecc384cc0fbd = L.circleMarker(
+                [50.8503, 4.3517],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_b174d79cdc91ab67b8436e6c3ace8cf7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_247852ecbd82c56451ae609dc17c62d0 = $(`<div id="html_247852ecbd82c56451ae609dc17c62d0" style="width: 100.0%; height: 100.0%;">بروكسل — مسيرة (مسيرات قرب مؤسسات الاتحاد الأوروبي)</div>`)[0];
+            popup_b174d79cdc91ab67b8436e6c3ace8cf7.setContent(html_247852ecbd82c56451ae609dc17c62d0);
+        
+
+        circle_marker_db38c679d9edc58a5267ecc384cc0fbd.bindPopup(popup_b174d79cdc91ab67b8436e6c3ace8cf7)
+        ;
+
+        
+    
+    
+            circle_marker_db38c679d9edc58a5267ecc384cc0fbd.bindTooltip(
+                `<div>
+                     بروكسل — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2e03004a05d263ea970d9c11550fe8cb = L.circleMarker(
+                [37.9838, 23.7275],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_d0583fb807a7dccdcb721511553f14e8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e0d5df12479ae85f0cfdd481bf0c5e5 = $(`<div id="html_3e0d5df12479ae85f0cfdd481bf0c5e5" style="width: 100.0%; height: 100.0%;">أثينا — مسيرة (مسيرة مركزية)</div>`)[0];
+            popup_d0583fb807a7dccdcb721511553f14e8.setContent(html_3e0d5df12479ae85f0cfdd481bf0c5e5);
+        
+
+        circle_marker_2e03004a05d263ea970d9c11550fe8cb.bindPopup(popup_d0583fb807a7dccdcb721511553f14e8)
+        ;
+
+        
+    
+    
+            circle_marker_2e03004a05d263ea970d9c11550fe8cb.bindTooltip(
+                `<div>
+                     أثينا — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6e839fccd366f90dc55b0a411fe3184a = L.circleMarker(
+                [41.3874, 2.1686],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_58b43db405604cca0b16e2ed35de6c53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d3d156ba0efaa01beeefd9811406a3f6 = $(`<div id="html_d3d156ba0efaa01beeefd9811406a3f6" style="width: 100.0%; height: 100.0%;">برشلونة — مسيرة (مسيرة ضخمة)</div>`)[0];
+            popup_58b43db405604cca0b16e2ed35de6c53.setContent(html_d3d156ba0efaa01beeefd9811406a3f6);
+        
+
+        circle_marker_6e839fccd366f90dc55b0a411fe3184a.bindPopup(popup_58b43db405604cca0b16e2ed35de6c53)
+        ;
+
+        
+    
+    
+            circle_marker_6e839fccd366f90dc55b0a411fe3184a.bindTooltip(
+                `<div>
+                     برشلونة — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f5beb6fb1e159112b7adb726bcebe4e8 = L.circleMarker(
+                [40.4168, -3.7038],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_6b0104ceed3c9c3a272e7bb659480df5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8312f12f8ae020f05936fa37b341fc25 = $(`<div id="html_8312f12f8ae020f05936fa37b341fc25" style="width: 100.0%; height: 100.0%;">مدريد — مسيرة (تجمعات ومسيرات)</div>`)[0];
+            popup_6b0104ceed3c9c3a272e7bb659480df5.setContent(html_8312f12f8ae020f05936fa37b341fc25);
+        
+
+        circle_marker_f5beb6fb1e159112b7adb726bcebe4e8.bindPopup(popup_6b0104ceed3c9c3a272e7bb659480df5)
+        ;
+
+        
+    
+    
+            circle_marker_f5beb6fb1e159112b7adb726bcebe4e8.bindTooltip(
+                `<div>
+                     مدريد — مسيرة
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ff14137c29ae4778b2d82846144b588a = L.circleMarker(
+                [46.2044, 6.1432],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_97c8093378903fe7fdc850e26bf99b4c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0cedebb4308948ffc661aef8541d399b = $(`<div id="html_0cedebb4308948ffc661aef8541d399b" style="width: 100.0%; height: 100.0%;">جنيف — اشتباكات (مناوشات/اشتباكات محدودة)</div>`)[0];
+            popup_97c8093378903fe7fdc850e26bf99b4c.setContent(html_0cedebb4308948ffc661aef8541d399b);
+        
+
+        circle_marker_ff14137c29ae4778b2d82846144b588a.bindPopup(popup_97c8093378903fe7fdc850e26bf99b4c)
+        ;
+
+        
+    
+    
+            circle_marker_ff14137c29ae4778b2d82846144b588a.bindTooltip(
+                `<div>
+                     جنيف — اشتباكات
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2c56055d77af5f5662b7bd2ba3a0c38e = L.circleMarker(
+                [-34.6037, -58.3816],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b);
+        
+    
+        var popup_6407773b11423c905612278629a59d67 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fe01dcc8175d3980eea0b32e41adb264 = $(`<div id="html_fe01dcc8175d3980eea0b32e41adb264" style="width: 100.0%; height: 100.0%;">بوينس آيرس — تجمّع (وقفات)</div>`)[0];
+            popup_6407773b11423c905612278629a59d67.setContent(html_fe01dcc8175d3980eea0b32e41adb264);
+        
+
+        circle_marker_2c56055d77af5f5662b7bd2ba3a0c38e.bindPopup(popup_6407773b11423c905612278629a59d67)
+        ;
+
+        
+    
+    
+            circle_marker_2c56055d77af5f5662b7bd2ba3a0c38e.bindTooltip(
+                `<div>
+                     بوينس آيرس — تجمّع
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_b459db40cbab97cefdbac999e7b99700 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_24fa50068f8315c390eec825a6e23faf,
+                },
+                overlays :  {
+                    "\u0627\u062d\u062a\u062c\u0627\u062c\u0627\u062a \u0634\u0628\u0627\u0628\u064a\u0629 / \u062c\u064a\u0644 \u0632\u062f" : feature_group_52f82b6395c12ac8377f1a03d677ee01,
+                    "\u0627\u062d\u062a\u062c\u0627\u062c\u0627\u062a \u0639\u0644\u0649 \u0627\u0639\u062a\u0631\u0627\u0636 \u0623\u0633\u0637\u0648\u0644 \u0627\u0644\u0635\u0645\u0648\u062f" : feature_group_89ccb3c15e3413bd5302c815314ff3d2,
+                    "\u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u062d\u062f\u0629" : feature_group_dd1f6cd9b7cfe93915c42ee2aed3603b,
+                },
+            };
+            L.control.layers(
+                layer_control_b459db40cbab97cefdbac999e7b99700.base_layers,
+                layer_control_b459db40cbab97cefdbac999e7b99700.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_64313cbbe9a2a50dcb12282f15820bd6);
+        
+</script>
+</html>
